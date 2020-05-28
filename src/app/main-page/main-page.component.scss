@@ -6,6 +6,7 @@
   justify-content: space-between;
   max-height: 655px;
   height: 655px;
+  color: #FFFFFF;
   background: url("../../assets/Rectangle8.png") ;
 }
 .left, .right{
@@ -39,7 +40,6 @@
 }
 .header_text1{
   font-size: 48px;
-  color: #FFFFFF;
   line-height: 59px;
   margin: 0 0 2% 5%;
   .bold{
@@ -52,7 +52,6 @@
 }
 .header_text2{
   font-size: 20px;
-  color: #FFFFFF;
   line-height: 142%;
   margin: 0 0 5% 5%;
 }
@@ -140,6 +139,7 @@
 }
 .footer {
   height: 183.46px;
+  color: #FFFFFF;
   background-image: url("../../assets/Rectangle54.png"); background-repeat: no-repeat;;
   position: relative;
 }

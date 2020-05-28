@@ -1,0 +1,339 @@
+.header {
+  height: 72px;
+  background: #3A80BA;
+  margin-bottom: 1em;
+}
+
+.logo {
+  color: #FFFFFF;
+  width: 136px;
+  padding-top: 0;
+  height: 73px;
+  margin: 10px 0 13px 5%;
+  span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 49px;
+  }
+}
+
+.footer {
+  height: 57px;
+  background: #1C3B55;
+}
+
+.footer_wrap {
+  color: #FFFFFF;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  .footer_App {
+    font-size: 24px;
+    line-height: 29px;
+    margin: 14px 0 14px 5%;
+  }
+  .footer_text{
+    font-size: 16px;
+    line-height: 142%;
+    margin: 17px 0 17px 5%;
+  }
+}
+
+.main_wrapper {
+  margin: 0 0 1em 5%;
+  min-height: 450px;
+}
+
+.main_text {
+  font-size: 32px;
+  line-height: 39px;
+  color: #1A1A1A;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+table {
+  width: 100%;
+  background-color: #f5f5f5;
+  border: 1px solid black;
+
+  moz-border-radius: 10px; /* Firefox */
+  -webkit-border-radius: 10px; /* Safari, Google Chrome */
+  -khtml-border-radius: 10px; /* KHTML */
+  -o-border-radius: 10px; /* Opera */
+  -ms-border-radius: 10px; /* IE8 */
+  border-radius: 10px; /* CSS3 */
+  overflow:hidden;
+  margin:0.7em auto;
+}
+table, th, td {
+  border-collapse: collapse;
+  text-align: center;
+}
+th {
+  height: 48px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  font-weight: normal;
+  background: #3A80BA;
+  border: 1px solid white;
+  min-width: 30px;
+}
+td {
+  font-size: 16px;
+  line-height: 20px;
+  color: #1A1A1A;
+  letter-spacing: 1px;
+  border: 1px solid white;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #FBFBFB;;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #F1F1F1;
+}
+
+
+.cd-breadcrumb {
+  width: 90%;
+  max-width: 768px;
+  padding: 0;
+  border-radius: .25em;
+  margin-bottom: 1.5em;
+}
+.cd-breadcrumb:after  {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-breadcrumb li {
+  display: inline-block;
+  float: left;
+  margin: 0.5em 0;
+}
+.cd-breadcrumb li::after {
+  /* this is the separator between items */
+  display: inline-block;
+  content: '\00bb';
+  margin: 0 .6em;
+  color: #CCCCCC;
+}
+.cd-breadcrumb li:last-of-type::after, .cd-multi-steps li:last-of-type::after {
+  /* hide separator after the last item */
+  display: none;
+}
+.cd-breadcrumb li > *, .cd-multi-steps li > * {
+  /* single step */
+  display: inline-block;
+  font-size: 16px;
+  line-height: 20px;
+  color: #CCCCCC;
+}
+.cd-breadcrumb li.current > * {
+  /* selected step */
+  color: #3A80BA;
+}
+.no-touch .cd-breadcrumb a:hover {
+  /* steps already visited */
+  color: #96c03d;
+}
+.cd-breadcrumb.custom-separator li::after, .cd-multi-steps.custom-separator li::after {
+  /* replace the default arrow separator with a custom icon */
+  content: '';
+  height: 16px;
+  width: 16px;
+  background: url("../../assets/cd-custom-separator.svg") no-repeat center center;
+  vertical-align: middle;
+}
+.cd-breadcrumb.custom-icons li > *::before, .cd-multi-steps.custom-icons li > *::before {
+  /* add a custom icon before each item */
+  content: '';
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin-right: .4em;
+  margin-top: -2px;
+  /* background: url(../img/cd-custom-icons-01.svg) no-repeat 0 0; */
+  vertical-align: middle;
+}
+.cd-breadcrumb.custom-icons li:not(.current):nth-of-type(2) > *::before, .cd-multi-steps.custom-icons li:not(.current):nth-of-type(2) > *::before {
+  /* change custom icon using image sprites */
+  background-position: -20px 0;
+}
+.cd-breadcrumb.custom-icons li:not(.current):nth-of-type(3) > *::before, .cd-multi-steps.custom-icons li:not(.current):nth-of-type(3) > *::before {
+  background-position: -40px 0;
+}
+.cd-breadcrumb.custom-icons li:not(.current):nth-of-type(4) > *::before, .cd-multi-steps.custom-icons li:not(.current):nth-of-type(4) > *::before {
+  background-position: -60px 0;
+}
+.cd-breadcrumb.custom-icons li.current:first-of-type > *::before, .cd-multi-steps.custom-icons li.current:first-of-type > *::before {
+  /* change custom icon for the current item */
+  background-position: 0 -20px;
+}
+.cd-breadcrumb.custom-icons li.current:nth-of-type(2) > *::before, .cd-multi-steps.custom-icons li.current:nth-of-type(2) > *::before {
+  background-position: -20px -20px;
+}
+.cd-breadcrumb.custom-icons li.current:nth-of-type(3) > *::before, .cd-multi-steps.custom-icons li.current:nth-of-type(3) > *::before {
+  background-position: -40px -20px;
+}
+.cd-breadcrumb.custom-icons li.current:nth-of-type(4) > *::before, .cd-multi-steps.custom-icons li.current:nth-of-type(4) > *::before {
+  background-position: -60px -20px;
+}
+@media only screen and (min-width: 768px) {
+  .cd-breadcrumb {
+    padding-right: 0.5em;
+  }
+  .cd-breadcrumb li {
+    margin: 0;
+  }
+  .cd-breadcrumb li::after {
+    margin: 0 0.5em;
+  }
+  .cd-breadcrumb li > * {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-breadcrumb.triangle {
+    /* reset basic style */
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .cd-breadcrumb.triangle li:last-of-type::after, .cd-breadcrumb.triangle li:last-of-type > *::after {
+    /* hide the triangle after the last step */
+    display: none;
+  }
+  .cd-breadcrumb.triangle.custom-separator li::after {
+    /* reset style */
+    background-image: none;
+  }
+  .cd-breadcrumb.triangle.custom-icons li::after, .cd-breadcrumb.triangle.custom-icons li > *::after {
+    /* 50px is the height of the <a> element */
+    border-top-width: 25px;
+    border-bottom-width: 25px;
+  }
+
+  @-moz-document url-prefix() {
+    .cd-breadcrumb.triangle li::after,
+    .cd-breadcrumb.triangle li > *::after {
+      /* fix a bug on Firefix - tooth edge on css triangle */
+      border-left-style: dashed;
+    }
+  }
+}
+/* --------------------------------
+
+Custom icons hover effects - breadcrumb and multi-steps
+
+-------------------------------- */
+@media only screen and (min-width: 768px) {
+  .no-touch .cd-breadcrumb.triangle.custom-icons li:first-of-type a:hover::before, .cd-breadcrumb.triangle.custom-icons li.current:first-of-type em::before, .no-touch .cd-multi-steps.text-center.custom-icons li:first-of-type a:hover::before, .cd-multi-steps.text-center.custom-icons li.current:first-of-type em::before {
+    /* change custom icon using image sprites - hover effect or current item */
+    background-position: 0 -40px;
+  }
+  .no-touch .cd-breadcrumb.triangle.custom-icons li:nth-of-type(2) a:hover::before, .cd-breadcrumb.triangle.custom-icons li.current:nth-of-type(2) em::before, .no-touch .cd-multi-steps.text-center.custom-icons li:nth-of-type(2) a:hover::before, .cd-multi-steps.text-center.custom-icons li.current:nth-of-type(2) em::before {
+    background-position: -20px -40px;
+  }
+  .no-touch .cd-breadcrumb.triangle.custom-icons li:nth-of-type(3) a:hover::before, .cd-breadcrumb.triangle.custom-icons li.current:nth-of-type(3) em::before, .no-touch .cd-multi-steps.text-center.custom-icons li:nth-of-type(3) a:hover::before, .cd-multi-steps.text-center.custom-icons li.current:nth-of-type(3) em::before {
+    background-position: -40px -40px;
+  }
+  .no-touch .cd-breadcrumb.triangle.custom-icons li:nth-of-type(4) a:hover::before, .cd-breadcrumb.triangle.custom-icons li.current:nth-of-type(4) em::before, .no-touch .cd-multi-steps.text-center.custom-icons li:nth-of-type(4) a:hover::before, .cd-multi-steps.text-center.custom-icons li.current:nth-of-type(4) em::before {
+    background-position: -60px -40px;
+  }
+}
+
+
+.paginate {
+  text-align: center;
+  margin-bottom: 1em;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    // display: inline-block; // an inline-block will allow you to use it with other contents
+  }
+  li {
+    display: inline;
+  }
+
+  a {
+    border-radius: 3px;
+    border: 2px solid #F1F1F1;
+
+    margin: 0 8px;
+    padding: 5px 10px;
+    display: inline-block;
+    border-top: 1px solid #fff;
+
+    text-decoration: none;
+    color: #717171;
+    font-size: 16px;
+    line-height: 20px;
+
+    text-shadow: rgba(255, 255, 255, 1) 0 1px 0;
+
+    background-color: #f5f5f5;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#eaeaea));
+    background-image: -webkit-linear-gradient(top, #f9f9f9, #eaeaea);
+    background-image:    -moz-linear-gradient(top, #f9f9f9, #eaeaea);
+    background-image:     -ms-linear-gradient(top, #f9f9f9, #eaeaea);
+    background-image:      -o-linear-gradient(top, #f9f9f9, #eaeaea);
+    background-image:         linear-gradient(top, #f9f9f9, #eaeaea);
+
+
+    // reset the margins
+    &:first-child, &.first  { margin-left: 4px; }
+    &:last-child, &.last    { margin-right: 4px; }
+
+
+    &:hover, &:focus {
+      border-color: #fff;
+      background-color: #fdfdfd;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#fafafa));
+      background-image: -webkit-linear-gradient(top, #fefefe, #fafafa);
+      background-image:    -moz-linear-gradient(top, #fefefe, #fafafa);
+      background-image:     -ms-linear-gradient(top, #fefefe, #fafafa);
+      background-image:      -o-linear-gradient(top, #fefefe, #fafafa);
+      background-image:         linear-gradient(top, #fefefe, #fafafa);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fefefe', EndColorStr='#fafafa');
+    }
+
+    &.more {
+      border: none;
+      background: white;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &.active {
+      box-shadow: rgba(0, 0, 0, 0.75) 0 0 0 0 inset;
+      border-color: #3A80BA;
+      color: #f2f2f2;
+      text-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+
+      background-color: #3A80BA;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#3A80BA), to(#3A80BA));
+      background-image: -webkit-linear-gradient(top, #3A80BA, #3A80BA);
+      background-image:    -moz-linear-gradient(top, #3A80BA, #3A80BA);
+      background-image:     -ms-linear-gradient(top, #3A80BA, #3A80BA);
+      background-image:      -o-linear-gradient(top, #3A80BA, #3A80BA);
+      background-image:         linear-gradient(top, #3A80BA, #3A80BA);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#3A80BA', EndColorStr='#3A80BA');
+    }
+    &.active_narrow {
+      border: none;
+      color: #3A80BA;
+      font-weight: bold;
+    }
+  }
+}

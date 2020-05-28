@@ -1,3 +1,79 @@
-<p>users-page works!</p>
+<div class="header">
+  <div class="container">
+    <div class="logo">
+      <span>AppCo</span>
+    </div>
+  </div>
+</div>
 
-<router-outlet></router-outlet>
+<div class="container">
+  <div class="main_wrapper">
+
+    <nav>
+      <ol class="cd-breadcrumb custom-separator">
+        <li >
+          <a routerLink="/">Main page</a>
+        </li>
+        <li class="current"><em>User statistics</em></li>
+      </ol>
+    </nav>
+
+    <div class="main_text">User statistics</div>
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>IP address</th>
+        <th>Total clicks</th>
+        <th>Total page views</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr >
+        <td>1</td>
+        <td>2</td>
+        <td>{{3}}</td>
+        <td>{{3}}</td>
+        <td>{{3}}</td>
+        <td>{{3}}</td>
+        <td>{{3}}</td>
+        <td>{{3}}</td>
+      </tr>
+      </tbody>
+
+    </table>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<div class="paginate wrapper">
+  <ul>
+    <li><a href="" class="more">&lang;</a></li>
+    <li><a href="">1</a></li>
+    <li><a href="" class="inactive">2</a></li>
+    <li><a href="">3</a></li>
+    <li><a href="" class="active">4</a></li>
+    <li><a href="">5</a></li>
+    <li><a href="" class="active_narrow more">&rang;</a></li>
+  </ul>
+</div>
+
+
+<div class="footer">
+  <div class="container">
+    <div class="footer_wrap">
+      <p class="footer_App">AppCo</p>
+      <p class="footer_text input">All rights reserved by ThemeTags</p>
+      <p class="footer_text">Copyrights &copy; 2019</p>
+    </div>
+  </div>
+</div>
+
+
