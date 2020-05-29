@@ -35,15 +35,15 @@
       </thead>
 
       <tbody>
-      <tr >
-        <td>1</td>
-        <td>2</td>
-        <td>{{3}}</td>
-        <td>{{3}}</td>
-        <td>{{3}}</td>
-        <td>{{3}}</td>
-        <td>{{3}}</td>
-        <td>{{3}}</td>
+      <tr *ngFor="let user of content">
+        <td>{{user.id}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.gender}}</td>
+        <td>{{user.ipAddress}}</td>
+        <td>{{user.totalClicks}}</td>
+        <td>{{user.totalPageViews}}</td>
       </tr>
       </tbody>
 

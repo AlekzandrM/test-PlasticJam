@@ -80,11 +80,7 @@
       true,
       "single"
     ],
-    "semicolon": {
-      "options": [
-        "always"
-      ]
-    },
+    "semicolon": false,
     "space-before-function-paren": {
       "options": {
         "anonymous": "never",
@@ -119,16 +115,8 @@
         "allow-pascal-case"
       ]
     },
-    "whitespace": {
-      "options": [
-        "check-branch",
-        "check-decl",
-        "check-operator",
-        "check-separator",
-        "check-type",
-        "check-typecast"
-      ]
-    },
+    "whitespace": false,
+    "no-trailing-whitespace": true,
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": true,
     "no-input-rename": true,

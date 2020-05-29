@@ -7,6 +7,7 @@ import { MainLayoutComponent } from './shared/components/main-layout/main-layout
 import { MainPageComponent } from './main-page/main-page.component';
 import { UsersPageComponent } from './users-page/users-page.component';
 import { StatisticsPageComponent } from './statistic-page/statistics-page.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { StatisticsPageComponent } from './statistic-page/statistics-page.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
