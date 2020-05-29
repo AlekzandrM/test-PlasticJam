@@ -1,57 +1,5 @@
-.header {
-  height: 72px;
-  background: #3A80BA;
-  margin-bottom: 1em;
-}
-
-.logo {
-  color: #FFFFFF;
-  width: 136px;
-  padding-top: 0;
-  height: 73px;
-  margin: 10px 0 13px 5%;
-  span {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 40px;
-    line-height: 49px;
-  }
-}
-
-.footer {
-  height: 57px;
-  background: #1C3B55;
-}
-
-.footer_wrap {
-  color: #FFFFFF;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  .footer_App {
-    font-size: 24px;
-    line-height: 29px;
-    margin: 14px 0 14px 5%;
-  }
-  .footer_text{
-    font-size: 16px;
-    line-height: 142%;
-    margin: 17px 0 17px 5%;
-  }
-}
-
 .main_wrapper {
-  margin: 0 0 1em 5%;
-  min-height: 450px;
-}
-
-.main_text {
-  font-size: 32px;
-  line-height: 39px;
-  color: #1A1A1A;
-  font-weight: bold;
-  margin-bottom: 1em;
+  min-height: 600px;
 }
 
 table {
@@ -83,6 +31,7 @@ th {
   min-width: 30px;
 }
 td {
+  height: 32px;
   font-size: 16px;
   line-height: 20px;
   color: #1A1A1A;

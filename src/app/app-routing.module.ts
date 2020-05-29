@@ -12,9 +12,9 @@ const routes: Routes = [
       {path: '', redirectTo: '/', pathMatch: 'full'},
       {path: '', component: MainPageComponent},
       {path: 'users', component: UsersPageComponent, children: [
-          {path: 'statistic/:id', component: StatisticsPageComponent},
-          {path: ':id', component: StatisticsPageComponent}
-      ]}
+          {path: 'statistic/:id', component: StatisticsPageComponent}
+      ]},
+      {path: 'users/:id', component: StatisticsPageComponent}
     ]
   },
   {
