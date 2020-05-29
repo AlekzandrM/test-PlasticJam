@@ -35,36 +35,76 @@
       </thead>
 
       <tbody>
-      <tr *ngFor="let user of content">
-        <td>{{user.id}}</td>
-        <td>{{user.firstName}}</td>
-        <td>{{user.lastName}}</td>
-        <td>{{user.email}}</td>
-        <td>{{user.gender}}</td>
-        <td>{{user.ipAddress}}</td>
-        <td>{{user.totalClicks}}</td>
-        <td>{{user.totalPageViews}}</td>
+      <tr *ngFor="let user of content" [routerLink]="['/users', user.id]">
+        <td><a [routerLink]="['/users', user.id]">{{user.id}}</a></td>
+        <td><a [routerLink]="['/users', user.id]">{{user.firstName}}</a></td>
+        <td><a [routerLink]="['/users', user.id]">{{user.lastName}}</a></td>
+        <td><a [routerLink]="['/users', user.id]">{{user.email}}</a></td>
+        <td><a [routerLink]="['/users', user.id]">{{user.gender}}</a></td>
+        <td><a [routerLink]="['/users', user.id]">{{user.ipAddress}}</a></td>
+        <td><a [routerLink]="['/users', user.id]">{{user.totalClicks}}</a></td>
+        <td><a [routerLink]="['/users', user.id]">{{user.totalPageViews}}</a></td>
       </tr>
       </tbody>
-
     </table>
 
-    <router-outlet></router-outlet>
   </div>
 </div>
 
 <div class="paginate wrapper">
-  <ul>
-    <li><a href="" class="more">&lang;</a></li>
-    <li><a href="">1</a></li>
-    <li><a href="" class="inactive">2</a></li>
-    <li><a href="">3</a></li>
-    <li><a href="" class="active">4</a></li>
-    <li><a href="">5</a></li>
-    <li><a href="" class="active_narrow more">&rang;</a></li>
+  <ul >
+    <li
+      (click)="previousPages()"
+    >
+      <a
+        [ngClass]="{
+          more: true,
+          active_narrow: page1 > +5,
+          isDisabled: page1 <= 1
+        }"
+      >&lang;</a>
+    </li>
+    <li>
+      <a
+        (click)="loadNextUsers($event, page1)"
+        [ngClass]="{'active': isActive1}"
+      > {{page1}}
+      </a>
+    </li>
+    <li>
+      <a
+        (click)="loadNextUsers($event, page2)"
+        [ngClass]="{'active': isActive2, isDisabled: noMoreUsers}"
+      >{{page2}}</a>
+    </li>
+    <li><a
+      (click)="loadNextUsers($event, page3)"
+      [ngClass]="{'active': isActive3, isDisabled: noMoreUsers}"
+      >{{page3}}</a>
+    </li>
+    <li><a
+      (click)="loadNextUsers($event, page4)"
+      [ngClass]="{'active': isActive4, isDisabled: noMoreUsers}"
+      >{{page4}}</a>
+    </li>
+    <li>
+      <a
+        (click)="loadNextUsers($event, page5)"
+        [ngClass]="{'active': isActive5, isDisabled: noMoreUsers}"
+      >{{page5}}</a>
+    </li>
+    <li >
+      <a
+        (click)="nextPages()"
+        [ngClass]="{
+          'more': true,
+          'active_narrow': content.length > 250,
+          'isDisabled': noMoreUsers
+        }"
+      >&rang;</a>
+    </li>
   </ul>
 </div>
-
 
 <div class="footer">
   <div class="container">

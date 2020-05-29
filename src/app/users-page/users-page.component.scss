@@ -120,8 +120,7 @@ tbody tr:nth-child(even) {
   /* this is the separator between items */
   display: inline-block;
   content: '\00bb';
-  margin: 0 .6em;
-  color: #CCCCCC;
+  margin: 0 .5em;
 }
 .cd-breadcrumb li:last-of-type::after, .cd-multi-steps li:last-of-type::after {
   /* hide separator after the last item */
@@ -283,13 +282,6 @@ Custom icons hover effects - breadcrumb and multi-steps
     text-shadow: rgba(255, 255, 255, 1) 0 1px 0;
 
     background-color: #f5f5f5;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#eaeaea));
-    background-image: -webkit-linear-gradient(top, #f9f9f9, #eaeaea);
-    background-image:    -moz-linear-gradient(top, #f9f9f9, #eaeaea);
-    background-image:     -ms-linear-gradient(top, #f9f9f9, #eaeaea);
-    background-image:      -o-linear-gradient(top, #f9f9f9, #eaeaea);
-    background-image:         linear-gradient(top, #f9f9f9, #eaeaea);
-
 
     // reset the margins
     &:first-child, &.first  { margin-left: 4px; }
@@ -299,20 +291,12 @@ Custom icons hover effects - breadcrumb and multi-steps
     &:hover, &:focus {
       border-color: #fff;
       background-color: #fdfdfd;
-      background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#fafafa));
-      background-image: -webkit-linear-gradient(top, #fefefe, #fafafa);
-      background-image:    -moz-linear-gradient(top, #fefefe, #fafafa);
-      background-image:     -ms-linear-gradient(top, #fefefe, #fafafa);
-      background-image:      -o-linear-gradient(top, #fefefe, #fafafa);
-      background-image:         linear-gradient(top, #fefefe, #fafafa);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fefefe', EndColorStr='#fafafa');
     }
 
     &.more {
       border: none;
       background: white;
       margin-left: 0;
-      margin-right: 0;
     }
 
     &.active {
@@ -320,15 +304,7 @@ Custom icons hover effects - breadcrumb and multi-steps
       border-color: #3A80BA;
       color: #f2f2f2;
       text-shadow: rgba(0, 0, 0, 1) 0 1px 0;
-
       background-color: #3A80BA;
-      background-image: -webkit-gradient(linear, left top, left bottom, from(#3A80BA), to(#3A80BA));
-      background-image: -webkit-linear-gradient(top, #3A80BA, #3A80BA);
-      background-image:    -moz-linear-gradient(top, #3A80BA, #3A80BA);
-      background-image:     -ms-linear-gradient(top, #3A80BA, #3A80BA);
-      background-image:      -o-linear-gradient(top, #3A80BA, #3A80BA);
-      background-image:         linear-gradient(top, #3A80BA, #3A80BA);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#3A80BA', EndColorStr='#3A80BA');
     }
     &.active_narrow {
       border: none;
@@ -336,4 +312,14 @@ Custom icons hover effects - breadcrumb and multi-steps
       font-weight: bold;
     }
   }
+}
+.active {
+  box-shadow: rgba(0, 0, 0, 0.75) 0 0 0 0 inset;
+  border-color: #3A80BA;
+  color: #f2f2f2;
+  text-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+  background-color: #3A80BA;
+}
+.isDisabled {
+  pointer-events: none;
 }
