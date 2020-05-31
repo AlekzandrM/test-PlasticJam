@@ -8,6 +8,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { UsersPageComponent } from './users-page/users-page.component';
 import { StatisticsPageComponent } from './statistic-page/statistics-page.component';
 import {HttpClientModule} from '@angular/common/http';
+import { StatisticFilterComponent } from './statistic-page/statistic-filter/statistic-filter.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {HttpClientModule} from '@angular/common/http';
     MainPageComponent,
     StatisticsPageComponent,
     UsersPageComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    StatisticFilterComponent
   ],
   imports: [
     BrowserModule,

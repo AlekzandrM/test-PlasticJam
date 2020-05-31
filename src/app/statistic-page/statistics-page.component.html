@@ -7,34 +7,48 @@
 </div>
 
 <div class="container">
-  <div class="main_wrapper">
+  <nav>
+    <ol class="cd-breadcrumb custom-separator">
+      <li >
+        <a routerLink="/">Main page</a>
+      </li>
+      <li >
+        <a routerLink="/users">User statistics</a>
+      </li>
+      <li class="current"><em>{{firstName}} {{lastName}}</em></li>
+    </ol>
+  </nav>
 
-    <nav>
-      <ol class="cd-breadcrumb custom-separator">
-        <li >
-          <a routerLink="/">Main page</a>
-        </li>
-        <li >
-          <a routerLink="/users">User statistics</a>
-        </li>
-        <li class="current"><em>Text</em></li>
-      </ol>
-    </nav>
+  <div class="filter">
+    <div class="main_text">{{firstName}} {{lastName}}</div>
+    <button
+      [ngClass]="{
+          btn_filter: true,
+          filter_on: isFilterVisible
+        }"
+      (click)="useFilter()"
+    >Фильтр
+    </button>
+  </div>
 
-    <div class="main_text">Text</div>
+  <app-statistic-filter
+    *ngIf="isFilterVisible"
+  ></app-statistic-filter>
 
-    <div class="clicks">
+  <div [style.display]="pending ? 'none' : 'block' " >
+    <div class="canvas canvMargin">
       <p>Clicks</p>
-      <canvas></canvas>
+      <canvas #clicks></canvas>
     </div>
 
-    <div class="views">
+    <div class="canvas">
       <p>Views</p>
-      <canvas></canvas>
+      <canvas #views></canvas>
     </div>
 
   </div>
 </div>
+<p *ngIf="pending">Загрузка...</p>
 
 <div class="footer">
   <div class="container">
@@ -45,3 +59,5 @@
     </div>
   </div>
 </div>
+
+

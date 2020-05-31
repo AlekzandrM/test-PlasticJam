@@ -15,3 +15,13 @@ export interface UserContent {
   ipAddress: string
 }
 
+export interface Statistics {
+  chart: StatisticsItem[]
+}
+export interface StatisticsItem {
+  id: number
+  page_views: number
+  date: string
+  clicks: number
+  userId: number
+}
