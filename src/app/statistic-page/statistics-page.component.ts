@@ -1,12 +1,11 @@
 import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {UsersService} from '../shared/services/users.service';
-import {Observable, Subscription} from 'rxjs';
+import { Subscription} from 'rxjs';
 import {ActivatedRoute, Params} from '@angular/router';
-import {map, switchMap, tap} from 'rxjs/operators';
-import {Statistics, Users} from '../shared/interfaces';
+import {tap, switchMap} from 'rxjs/operators';
+import {Filter, Statistics} from '../shared/interfaces';
 import {Chart} from 'chart.js'
 import * as moment from 'moment'
-
 
 
 @Component({
@@ -19,13 +18,18 @@ export class StatisticsPageComponent implements  OnInit, AfterViewInit, OnDestro
   @ViewChild('clicks') clicksRef: ElementRef
   @ViewChild('views') viewsRef: ElementRef
   sSub$: Subscription
+  fSub$: Subscription
 
   firstName = ''
   lastName = ''
-
+  filter: Filter = {
+    from: moment().add(-7, 'd').format('DD.MM.YYYY'),
+    to: moment().format('DD.MM.YYYY')
+  }
+  param = {}
 
   pending = true
-  isFilterVisible = true
+  isFilterVisible = false
 
   constructor(
     private usersService: UsersService,
@@ -36,6 +40,9 @@ export class StatisticsPageComponent implements  OnInit, AfterViewInit, OnDestro
     if (this.sSub$) {
       this.sSub$.unsubscribe()
     }
+    if (this.fSub$) {
+      this.fSub$.unsubscribe()
+    }
   }
 
   ngAfterViewInit() {
@@ -43,19 +50,22 @@ export class StatisticsPageComponent implements  OnInit, AfterViewInit, OnDestro
   }
 
   ngOnInit() {
-    // const params = Object.assign({})
-    this.fetchUsers()
+    this.fetchUser()
   }
 
-  private fetchUsers() {
-    this.route.params.pipe(
+  applyFilter(filter: Filter) {
+    this.filter = filter
+    this.fetch()
+  }
+
+  private fetchUser() {
+    this.fSub$ = this.route.params.pipe(
       switchMap((params: Params) => {
         return this.usersService.fetchById(params.id)
       })
     ).subscribe(user => {
       this.firstName = user.content[0].firstName
       this.lastName = user.content[0].lastName
-      console.log(this.lastName)
     })
   }
 
@@ -73,21 +83,12 @@ export class StatisticsPageComponent implements  OnInit, AfterViewInit, OnDestro
 
       this.sSub$ = this.route.params
         .pipe(
-          // tap((params: Params) => {
-          //   this.users$ = this.usersService.fetch().pipe(
-          //     map(item => {
-          //       const idx = 'content'
-          //       let name
-          //       if (item[idx].id === params.id) {
-          //         name = item[idx].firstName
-          //         return name
-          //       }
-          //     })
-          //   )
-          // }),
-          switchMap((params: Params) => {
-            return this.usersService.getStatistics(params.id)
-          })
+          params => {
+            this.param = params
+
+            const newParams = Object.assign({}, this.param, this.filter)
+            return this.usersService.getStatistics(newParams)
+          }
         )
         .subscribe((res: Statistics) => {
 
@@ -114,7 +115,6 @@ export class StatisticsPageComponent implements  OnInit, AfterViewInit, OnDestro
   useFilter() {
     this.isFilterVisible = !this.isFilterVisible
   }
-
 }
 
 function createCharConfig({labels, data, label, color}) {

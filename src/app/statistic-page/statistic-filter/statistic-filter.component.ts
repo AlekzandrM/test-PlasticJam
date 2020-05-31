@@ -34,7 +34,6 @@ export class StatisticFilterComponent implements OnInit, AfterViewInit {
       from: this.form.value.from,
       to: this.form.value.to
     }
-    console.log(dateFilter)
     this.onFilter.emit(dateFilter)
   }
 }

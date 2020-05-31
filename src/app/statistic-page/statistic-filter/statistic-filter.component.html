@@ -1,7 +1,8 @@
 <form [formGroup]="form" (ngSubmit)="submitFilter()">
 
     <div class="filter">
-      <mat-form-field>
+
+      <mat-form-field class="inp">
         <input
           formControlName="from"
           matInput [matDatepicker]="start"
@@ -11,7 +12,8 @@
         <mat-datepicker-toggle [for]="start" matSuffix></mat-datepicker-toggle>
         <mat-datepicker #start></mat-datepicker>
       </mat-form-field>
-      <mat-form-field>
+
+      <mat-form-field class="inp">
         <input
           formControlName="to"
           matInput [matDatepicker]="end"

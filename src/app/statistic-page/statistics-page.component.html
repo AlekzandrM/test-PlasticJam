@@ -33,6 +33,7 @@
 
   <app-statistic-filter
     *ngIf="isFilterVisible"
+    (onFilter)="applyFilter($event)"
   ></app-statistic-filter>
 
   <div [style.display]="pending ? 'none' : 'block' " >

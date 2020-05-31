@@ -1,7 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {UsersService} from '../shared/services/users.service';
 import { Subscription} from 'rxjs';
-import {UserContent, Users} from '../shared/interfaces';
 import {map} from 'rxjs/operators';
 
 const STEP = 50
@@ -60,7 +59,6 @@ export class UsersPageComponent implements OnInit, OnDestroy {
       )
       .subscribe((users) => {
         users.map((item) => {
-          console.log(item)
           this.content.push(item)
         })
         this.noMoreUsers = this.content.length < STEP

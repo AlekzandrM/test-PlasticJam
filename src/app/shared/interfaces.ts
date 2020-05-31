@@ -27,6 +27,6 @@ export interface StatisticsItem {
 }
 
 export interface Filter {
-  from: Date
-  to: Date
+  from?: any
+  to?: any
 }

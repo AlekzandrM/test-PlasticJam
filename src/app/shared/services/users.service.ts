@@ -29,8 +29,8 @@ export class UsersService {
       '"totalPages": 100,"totalElements": 200}'))
   }
 
-  getStatistics(id: number, params: any = {}): Observable<Statistics> {
-    // return this.http.get<Statistics>(`/api/v1/users/statistic/${id}`, {
+  getStatistics(params: any = {}): Observable<Statistics> {
+    // return this.http.get<Statistics>(`/api/v1/users/statistic`, {
     //   params: new HttpParams({
     //     fromObject: params
     //   })
