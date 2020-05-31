@@ -1,3 +1,30 @@
-.filter_input{
-  margin-bottom: 1em;
+.btn_wrapper {
+  display: flex;
+  justify-content: center;
+}
+.filter{
+  display: flex;
+  justify-content: center;
+}
+.btn {
+    width: 15%;
+    height: 2em;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 20px;
+    border-radius: 1.2em;
+    background: #7E7E7E;
+    @media (max-width: 1400px) {
+      width: 25%;
+    }
+    @media (max-width: 1200px) {
+      width: 25%;
+    }
+    @media (max-width: 425px) {
+      width: 25%;
+    }
+    @media (max-width: 320px) {
+      width: 25%;
+    }
 }

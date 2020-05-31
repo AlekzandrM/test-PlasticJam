@@ -1,3 +1,35 @@
-<div class="filter_input">
-  statistic-filter works!
-</div>
+<form [formGroup]="form" (ngSubmit)="submitFilter()">
+
+    <div class="filter">
+      <mat-form-field>
+        <input
+          formControlName="from"
+          matInput [matDatepicker]="start"
+          [min]="minDate" [max]="maxDate"
+          placeholder="Начало периода"
+        >
+        <mat-datepicker-toggle [for]="start" matSuffix></mat-datepicker-toggle>
+        <mat-datepicker #start></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          formControlName="to"
+          matInput [matDatepicker]="end"
+          [min]="minDate" [max]="maxDate"
+          placeholder="Конец периода"
+        >
+        <mat-datepicker-toggle [for]="end" matSuffix></mat-datepicker-toggle>
+        <mat-datepicker #end></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+  <div class="btn_wrapper">
+    <button
+      class="btn"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      Применить фильтр
+    </button>
+  </div>
+</form>

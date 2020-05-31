@@ -25,7 +25,7 @@ export class StatisticsPageComponent implements  OnInit, AfterViewInit, OnDestro
 
 
   pending = true
-  isFilterVisible = false
+  isFilterVisible = true
 
   constructor(
     private usersService: UsersService,

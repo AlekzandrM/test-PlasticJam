@@ -25,3 +25,8 @@ export interface StatisticsItem {
   clicks: number
   userId: number
 }
+
+export interface Filter {
+  from: Date
+  to: Date
+}

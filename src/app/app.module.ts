@@ -9,6 +9,13 @@ import { UsersPageComponent } from './users-page/users-page.component';
 import { StatisticsPageComponent } from './statistic-page/statistics-page.component';
 import {HttpClientModule} from '@angular/common/http';
 import { StatisticFilterComponent } from './statistic-page/statistic-filter/statistic-filter.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatMomentDateModule} from '@angular/material-moment-adapter';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -23,7 +30,15 @@ import { StatisticFilterComponent } from './statistic-page/statistic-filter/stat
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    BrowserAnimationsModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
